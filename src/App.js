@@ -1,26 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import API from './utils/API'
+import React from "react";
 
-function App() {
-  return (
-    <div>
-      <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Image</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Email</th>
-          <th scope="col">DOB</th>
-        </tr>
-      </thead>
-      <tbody>
-        <TableRow />
-      </tbody>
-    </table>
-  </div>
-  );
+class App extends React.Component {
+  state = {
+   data: [],
+   search: ""
+  }
+
+componentDidMount = () => {
+      API.search().then(res => {
+        console.log(res);
+        this.setState({ data: res.data })
+        console.log(data.res.data);
+      }).catch(err => {
+          console.log(err);
+        })
+    
+    }
+        // .then(res => this.setState({ result: res.data }))
+        // .catch(err => console.log(err));
+
+  render() {
+    return (
+      <div>Test</div>
+    )
+  }
 }
 
-export default App;
+  export default App;
+
+  
