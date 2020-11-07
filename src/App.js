@@ -9,10 +9,10 @@ class App extends React.Component {
   }
 
 componentDidMount = () => {
-      API.search().then(res => {
-        console.log(res);
+      API.getEmployee().then(res => {
+        // console.log(res);
         this.setState({ data: res.data.results })
-        // console.log(data:res.data);
+        console.log({data:res.data});
       }).catch(err => {
           console.log(err);
         })
