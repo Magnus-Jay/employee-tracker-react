@@ -1,6 +1,7 @@
 import './App.css';
 import API from './utils/API'
 import React from "react";
+import EmployeeTableBuilder from './components/EmployeeTableBuilder';
 
 class App extends React.Component {
   state = {
@@ -21,13 +22,14 @@ componentDidMount = () => {
         // .then(res => this.setState({ result: res.data }))
         // .catch(err => console.log(err));
 
-  render() {
-    return (
-      <div>Test</div>
-    )
-  }
-}
-
+        render() {
+          return (
+            <div>
+              <EmployeeTableBuilder data={this.state.data} />
+            </div >
+          )
+        }
+      }
   export default App;
 
   
