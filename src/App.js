@@ -1,5 +1,5 @@
 import './App.css';
-import API from './utils/API'
+import API from './utils/api'
 import React from "react";
 import EmployeeTableBuilder from './components/EmployeeTableBuilder';
 
