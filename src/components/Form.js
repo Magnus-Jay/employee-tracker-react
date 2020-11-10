@@ -5,7 +5,7 @@ function Form(props) {
     <div>
         <form>
             <div className="form-group row">
-                <label for="inputSearch" class="col-sm-2 col-form-label"></label>
+                <label form="inputSearch" className="col-sm-2 col-form-label"></label>
                 <div className="col-sm-4">
                     <input 
                         onChange={props.handleInputChange}
@@ -16,7 +16,7 @@ function Form(props) {
                         placeholder="search for an employee"
                         id="search"
                      />
-                     <button onClick={props.handleFormSubmit} className="btn btn-primary">Search</button>
+                     <button onClick={props.handleFormSubmit} className="btn btn-secondary">Search</button>
                 </div>
             </div>
         </form>

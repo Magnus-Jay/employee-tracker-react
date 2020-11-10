@@ -6,6 +6,7 @@ import Form from './components/Form'
 
 class App extends React.Component {
   state = {
+    dataBackUp: [],
    data: [],
    search: "",
    on: false
@@ -45,7 +46,7 @@ componentDidMount = () => {
             const filtered = this.state.data.filter(user => (user.name.first.toLowerCase().includes(value) || (user.name.last.toLowerCase().includes(value))))
             this.setState({ data: filtered, searchTerm: value })
           } else {
-            this.setState({ data: [...this.state.backupData], searchTerm: value })
+            this.setState({ data: [...this.state.dataBackUp], searchTerm: value })
           }
         }
 
@@ -73,6 +74,7 @@ componentDidMount = () => {
         render() {
           return (
             <div>
+              {/* <input name="testInput" onChange={this.handleInputChange} value={this.state.searchTerm} placeholder="Search" /> */}
               <EmployeeTableBuilder data={this.state.data} />
               <button className="btn btn-secondary" id="filterBtn" onClick={this.buttonPress}>Sort Names</button>
               <div className="searchArea col-sm-4 col-md-4 col-lg-4"></div>
