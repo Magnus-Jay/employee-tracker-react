@@ -6,10 +6,10 @@ import Form from './components/Form'
 
 class App extends React.Component {
   state = {
+    on: false,
     dataBackUp: [],
-   data: [],
    search: "",
-   on: false
+   data: []
   }
 
 componentDidMount = () => {
@@ -44,9 +44,9 @@ componentDidMount = () => {
           value = value.toLowerCase()
           if (value) {
             const filtered = this.state.data.filter(user => (user.name.first.toLowerCase().includes(value) || (user.name.last.toLowerCase().includes(value))))
-            this.setState({ data: filtered, searchTerm: value })
+            this.setState({ data: filtered, search: value })
           } else {
-            this.setState({ data: [...this.state.dataBackUp], searchTerm: value })
+            this.setState({ data: [...this.state.dataBackUp], search: value })
           }
         }
 
